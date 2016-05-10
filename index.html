@@ -1,0 +1,55 @@
+<!doctype html>
+<html ng-app="appSort">
+   
+   <head>
+      <script src ="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.3/angular.min.js"></script>
+ 	  <script src ="app.js"></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" 		integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+   </head>
+   
+   <body>
+	 <!-- Begin page content -->
+	    <div class="container">
+	      <div class="page-header">
+	        <h1>Sorteio de nomes</h1>
+	      </div>
+	      <p class="lead">Insira um nome e pressione ENTER para adiciona-lo a lista de sorteio, depois clique em SORTEAR.</p>
+	     <p>
+			<div class="container" ng-controller="sortController as sortCtrl">
+			   
+			    <div class="row">
+			      <form ng-submit="addName()">
+			        <input type="text" placeholder="Insira o nome e pressione enter" class="form-control" ng-model="name">
+			      </form>
+			    </div>
+			    <div class="row">
+			      <hr/>
+			    </div>
+			    <div class="row">
+			      <div class="well well-sm" ng-repeat="person in sortCtrl.personList">
+			        {{person.name}}
+			      </div>
+			    </div>
+				<div class="row" align="center">
+					<h2 ng-bind="person_winner"></h2>
+				</div>
+			    <div class="row" align="center">
+			      <a href="#" class="btn btn-primary btn-lg btn-block" ng-click="sortName()">SORTEAR!</a>
+			    </div>
+			  </div>
+			
+	     
+	     </p>
+	    </div>
+	
+		
+
+	    <footer class="footer">
+	      <div class="container">
+	        <p class="text-muted"></p>
+	      </div>
+	    </footer>
+
+      
+   </body>
+</html>
